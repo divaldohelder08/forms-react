@@ -68,9 +68,9 @@ export function App() {
     setOutput(JSON.stringify(data, null, 2))
   }
 
-  const { 
-    handleSubmit, 
-    formState: { isSubmitting }, 
+  const {
+    handleSubmit,
+    formState: { isSubmitting },
     watch,
     control,
   } = createUserForm;
@@ -89,7 +89,7 @@ export function App() {
   return (
     <main className="h-screen flex flex-row gap-6 items-center justify-center">
       <FormProvider {...createUserForm}>
-        <form 
+        <form
           onSubmit={handleSubmit(createUser)}
           className="flex flex-col gap-4 w-full max-w-xs"
         >
@@ -122,7 +122,7 @@ export function App() {
             <Form.Label htmlFor="password">
               Senha
 
-              {isPasswordStrong 
+              {isPasswordStrong
                 ? <span className="text-xs text-emerald-600">Senha forte</span>
                 : <span className="text-xs text-red-500">Senha fraca</span>}
             </Form.Label>
@@ -134,8 +134,8 @@ export function App() {
             <Form.Label>
               Tecnologias
 
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={addNewTech}
                 className="text-emerald-500 font-semibold text-xs flex items-center gap-1"
               >
@@ -152,8 +152,8 @@ export function App() {
                 <Form.Field key={field.id}>
                   <div className="flex gap-2 items-center">
                     <Form.Input type={fieldName} name={fieldName} />
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       onClick={() => remove(index)}
                       className="text-red-500"
                     >
@@ -167,8 +167,8 @@ export function App() {
           </Form.Field>
 
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isSubmitting}
             className="bg-violet-500 text-white rounded px-3 h-10 font-semibold text-sm hover:bg-violet-600"
           >
